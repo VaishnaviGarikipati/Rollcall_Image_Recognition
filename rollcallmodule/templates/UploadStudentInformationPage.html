@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table bgcolor="#06993C" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td style="color: #FFFFFF; font-size: 24px;">Upload student information</td>
+    </tr>
+  </tbody>
+
+</table>
+<p>
+<form method="post" action="/rollcallmodule/StudentInformation/importstu"  enctype="multipart/form-data">
+    {% csrf_token %}
+  <label for="lname"><br>
+    </label>Upload your file:</p>
+
+  <p>
+    <input type="file" id="myFile" name="filename" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, image/*" multiple="multiple">
+  </p>
+  <p>
+    <input type="submit" name="submit" id="submit" value="Submit" onClick="alert('Upload succesfull!');">
+    <br><br>
+      </form>
+  </p>
+  <form action="MyAttendancePage.html" method="POST">
+    <p></p>
+  </form>
+</body>
+</html>

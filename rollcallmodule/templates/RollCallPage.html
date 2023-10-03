@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+<script language="javascript">
+	function edit(i)
+		{
+			document.getElementById("lblStudentNum".concat(i)).style.display='none';
+			document.getElementById("txtStudentNum".concat(i)).style.display='';
+			document.getElementById("lblStudentName".concat(i)).style.display='none';
+			document.getElementById("txtStudentName".concat(i)).style.display='';
+			document.getElementById("btnUpdate".concat(i)).style.display='';
+			document.getElementById("btnEdit".concat(i)).style.display='none';
+			document.getElementById("btnDelete".concat(i)).style.display='none';
+		}
+	function update(i)
+		{
+			document.getElementById("lblStudentNum".concat(i)).style.display='';
+			document.getElementById("txtStudentNum".concat(i)).style.display='none';
+			document.getElementById("lblStudentName".concat(i)).style.display='';
+			document.getElementById("txtStudentName".concat(i)).style.display='none';
+			document.getElementById("btnUpdate".concat(i)).style.display='none';
+			document.getElementById("btnEdit".concat(i)).style.display='';
+			document.getElementById("btnDelete".concat(i)).style.display='';
+			document.getElementById("lblStudentNum".concat(i)).innerHTML=document.getElementById("txtStudentNum".concat(i)).value;
+			document.getElementById("lblStudentName".concat(i)).innerHTML=document.getElementById("txtStudentName".concat(i)).value;
+		}
+
+
+	function del(stuid)
+	{
+		if(confirm("Delete Confirm?"))
+		    location.href="/rollcallmodule/RollCallPage/delete/"+stuid+""
+	}
+</script>
+<style>
+.modal {
+  display: none;position: fixed;z-index: 1;padding-top: 100px;left: 0;top: 0;width: 100%;height: 100%; 
+  overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);
+	}
+.modal-content {
+  background-color: #fefefe;margin: auto;padding: 20px;border: 1px solid #888;width: 80%;
+}
+.close {
+  color: #aaaaaa;float: right;font-size: 28px;font-weight: bold;
+}
+
+.close1 {
+  color: #aaaaaa;float: right;font-size: 28px;font-weight: bold;
+}
+	
+.close2 {
+  color: #aaaaaa;float: right;font-size: 28px;font-weight: bold;
+}
+
+.close3 {
+  color: #aaaaaa;float: right;font-size: 28px;font-weight: bold;
+}
+
+
+.close:hover,
+.close1:hover,
+.close2:hover,
+.close3:hover,
+.close:focus {
+  color: #000;text-decoration: none;cursor: pointer;
+	}
+.close1:focus {
+  color: #000;text-decoration: none;cursor: pointer;
+	}
+.close2:focus {
+  color: #000;text-decoration: none;cursor: pointer;
+	}
+.close3:focus {
+  color: #000;text-decoration: none;cursor: pointer;
+	}
+
+
+</style>
+
+<meta charset="UTF-8">
+<title>RollCallPage</title>
+</head>
+
+<body>
+<table width="100%" height="33" border="0">
+  <tbody>
+  </tbody>
+</table>
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="left" bgcolor="#228744" scope="col" border="0" cellpadding="0" cellspacing="0"><img src="/static/images/sign list.jpg" width="56" height="39" alt=""/><span style="font-size: 24px; color: #FFFFFF;">Sign List</span></th>
+    </tr>
+    <tr>
+      <td width="1%" bgcolor="#228744">&nbsp;</td>
+      <td width="98%"><table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <th colspan="9" background="../materials//static/images/backt.jpg" height="25" scope="col"><table width="100%" border="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <th height="23" align="right" valign="middle" bgcolor="#ACB0AE" scope="col">
+                    <button id="myBtn">
+                      <img  src="/static/images/Select.PNG" width="30" height="30" >
+                      </button>  
+                    <button id="myBtn1">
+                      <img src="/static/images/import_1.PNG" width="30" height="30" >
+                      </button>
+                    <button id="myBtn2">
+                      <img  src="/static/images/starticon.jpg" width="30" height="30" >
+                      </button>
+                    <button id="myBtn3">
+                      <img   src="/static/images/history.jpg" width="30" height="30" >
+                      </button>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="frameholder">
+        <iframe width="100%" height="300px" frameborder="0" src="coursepopup" name="full_info">
+          </iframe>
+        </div>
+      </div>
+  </div>
+                    
+                    
+                    <div id="myModal1" class="modal">
+                      <div class="modal-content">
+                        <span class="close1">&times;</span>
+                        <div id="frameholder">
+                          <iframe width="100%" height="300px" frameborder="0" scrolling="yes" src="StudentInformation" name="full_info">
+                            </iframe>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div id="myModal2" class="modal">
+                      <div class="modal-content">
+                        <span class="close2">&times;</span>
+                        <div id="frameholder">
+                          <iframe width="100%" height="300px" frameborder="0" src="UploadClassStudentPhoto" name="full_info">
+                            </iframe>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div id="myModal3" class="modal">
+                      <div class="modal-content">
+                        <span class="close3">&times;</span>
+                        <div id="frameholder">
+                          <iframe width="100%" height="300px" frameborder="0" scrolling="yes" src="history" name="full_info">
+                            </iframe>
+                          </div>
+                        </div>
+                    </div>
+  <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+var modal1 = document.getElementById("myModal1");
+var modal2 = document.getElementById("myModal2");
+var modal3 = document.getElementById("myModal3");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+var btn1 = document.getElementById("myBtn1");
+var btn2 = document.getElementById("myBtn2");
+var btn3 = document.getElementById("myBtn3");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+var span1 = document.getElementsByClassName("close1")[0];
+var span2 = document.getElementsByClassName("close2")[0];
+var span3 = document.getElementsByClassName("close3")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+btn1.onclick = function() {
+  modal1.style.display = "block";
+}
+
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+btn3.onclick = function() {
+  modal3.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+span1.onclick = function() {
+  modal1.style.display = "none";
+}
+
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
+
+span3.onclick = function() {
+  modal3.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+					  </script>                  </th>
+                  </tr>
+              </tbody>
+            </table></th>
+            </tr>
+          <tr>
+            <td width="87" height="21" align="center" bgcolor="#DEE0DF">Student Number</td>
+            <td width="106" height="21" align="center" bgcolor="#DEE0DF">Student Name</td>
+            <td width="93" height="21" align="center" bgcolor="#DEE0DF">Term</td>
+            <td width="235" height="21" align="center" bgcolor="#DEE0DF">Course</td>
+            <td width="218" height="21" align="center" bgcolor="#DEE0DF">Attendance%</td>
+            <td width="134" align="center" bgcolor="#DEE0DF">Student Photo</td>
+            <td width="141" height="21" align="center" bgcolor="#DEE0DF">Management</td>
+          </tr>
+          {% for std in stdlist %}
+              <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+                <form action="RollCallPage/update/{{std.stuid}}" method="POST">
+                {% csrf_token %}
+                    <td align="center"><label for="textfield" id="lblStudentNum{{std.stuid}}">{{std.stunum}}</label>
+                      <input size="30" type="text" name="txtStudentNum{{std.stuid}}" id="txtStudentNum{{std.stuid}}" style="display: none" value="{{std.stunum}}"></td>
+                       <td align="center"><label for="textfield" id="lblStudentName{{std.stuid}}">{{std.stuname}}</label>
+                       <input size="30" type="text" name="txtStudentName{{std.stuid}}" id="txtStudentName{{std.stuid}}" style="display: none" value="{{std.stuname}}"></td>
+                      <td align="center">{{ std.selectcourse.term.termname }}</td>
+                      <td align="center">{{ std.selectcourse.course.coursename }}</td>
+                      <td align="center">
+                          {% for k, v in studatt.items %}
+                            {% if k == std.stunum %}{{ v }}%
+                            {% endif %}
+                          {% endfor %}
+                          </td>
+                      <td align="center"><img src="/static/StudentImages/{{std.stunum}}.jpg" width="52" height="41" onerror="this.onerror=null;this.src='/static/images/NoPhoto.jpg'"/></td>
+                    <td align="center" valign="middle">
+                        <input type="button" name="button2" id="btnEdit{{std.stuid}}" value="Edit" onClick="edit({{std.stuid}});">
+                        <input type="submit" name="button4" id="btnUpdate{{std.stuid}}" value="Update" style="display: none">
+                        <input type="button" name="button3" id="btnDelete{{std.stuid}}" value="Delete" onClick="del({{std.stuid}});">
+                    </td>
+                </form>
+              </tr>
+          {% endfor %}
+        </tbody>
+      </table></td>
+      <td width="1%"bgcolor="#228744">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#228744">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

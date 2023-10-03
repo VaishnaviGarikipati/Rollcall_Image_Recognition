@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MyAttendancePage</title>
+</head>
+
+<body>
+<table width="100%" border="0">
+  <tbody>
+    <tr bgcolor="#751D1F">
+      <th colspan="3" align="left" valign="middle" bgcolor="#06993C" scope="col"><img src="/static/images/Attendance2.png" width="47" height="41" alt=""/><span style="font-size: 24px; color: #FFFFFF;"><span style="font-size: 36px">Attendance</span>&nbsp;</span></th>
+    </tr>
+    <tr>
+      <td width="1%" bgcolor="#06993C">&nbsp;</td>
+      <td width="98%"><table width="100%" border="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <th height="23" align="left" valign="middle" bgcolor="#ACB0AE" scope="col"><label for="Select Term">
+              <label for="date"> </label>
+              <label for="select">Select Course:</label>
+              <select name="select" id="select">
+                <option value="INFO 5717">INFO 5717</option>
+                <option value="INFO 5707">INFO 5707</option>
+              </select>
+              <label for="date"> Date:</label>
+              <input type="date" name="date" id="date">
+			  <input type="submit" name="search" id="search" value="Search">
+			  </th>
+			</tr>
+		  </tbody>
+            </table>
+        <table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr bgcolor="#DEE0DF">
+            <th width="10%" height="25" bgcolor="#DEE0DF" scope="col">Date</th>
+            <th width="25%" scope="col">Course</th>
+            <th width="10%" scope="col">Presence</th>
+            <th width="10%" scope="col">Absence</th>
+            <th width="20%" scope="col">Appeal request</th>
+            </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <th height="25" scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col"><input type="submit" name="submit" id="submit" value="Send" onClick="alert('Appeal request sent!');"></th>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <th height="25" scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col"><input type="submit" name="submit2" id="submit2" value="Send" onClick="alert('Appeal request sent!');"></th>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <th height="25" scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col"><input type="submit" name="submit3" id="sbmit3" value="Send" onClick="alert('Appeal request sent!');"></th>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <th height="25" scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col"><input type="submit" name="submit" id="submit" value="Send" onClick="alert('Appeal request sent!');"></th>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <th height="25" scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col"><input type="submit" name="submit3" id="submit3" value="Send" onClick="alert('Appeal request sent!');"></th>
+          </tr>
+        </tbody>
+      </table></td>
+      <td width="1%" bgcolor="#06993C">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#751D1F">
+    <td height="40" colspan="3" align="left" bgcolor="#06993C">
+		<a href="AppealPage.html" target="myframe">
+			<button onclick="myFunction()">LogOut</button>
+			<script>
+			function myFunction() {
+			  location.replace("StudentLoginPage.html")
+			}
+			</script>
+        </a>
+    </td>
+	</tr>
+  </tbody>
+</table>
+<p><iframe frameborder="0" height="500" width="100%" name="myframe">&nbsp;</p>
+</body>
+</html>
