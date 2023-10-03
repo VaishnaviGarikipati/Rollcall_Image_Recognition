@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AdminLoginPage</title>
+</head>
+
+	<body>
+		<p><img src="/static/images/Admin.png" width="197" height="198" alt=""/></p>
+		<table width="249" height="27" border="0">
+  <tbody>
+    <tr>
+      <th width="243" align="left" bordercolor="2FA55E" background="" bgcolor="#2FA55E" style="color: #FFFFFF; font-size: 18px;"scope="col">Login</th>
+    </tr>
+  </tbody>
+</table>
+	<p>
+	<form action="/usermgnt/admin/login" method="POST"><p>
+		{% csrf_token %}
+		  <label for="textfield">Username:</label>
+          <input name="username" type="text" required="required" id="username" >
+		</p>
+	<p>
+		  <label for="password">Password:</label>
+          <input type="password" name="password" required="required" id="password">
+</p>
+          <input name="submit" type="submit" id="submit" formmethod="POST" value="Submit" align="center">
+				</p></form>
+	<p>&nbsp;</p>
+</body>
+</html>

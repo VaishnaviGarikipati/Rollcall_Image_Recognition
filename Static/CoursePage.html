@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CoursePage</title>
+</head>
+	<script language="javascript">
+	function edit(i)
+		{
+			document.getElementById("lblCourse".concat(i)).style.display='none';
+			document.getElementById("txtCourse".concat(i)).style.display='';
+			document.getElementById("btnUpdate".concat(i)).style.display='';
+			document.getElementById("btnEdit".concat(i)).style.display='none';
+			document.getElementById("btnDelete".concat(i)).style.display='none';
+		}
+	function update(i)
+		{
+			document.getElementById("lblCourse".concat(i)).style.display='';
+			document.getElementById("txtCourse".concat(i)).style.display='none';
+			document.getElementById("btnUpdate".concat(i)).style.display='none';
+			document.getElementById("btnEdit".concat(i)).style.display='';
+			document.getElementById("btnDelete".concat(i)).style.display='';
+			document.getElementById("lblCourse".concat(i)).innerHTML=document.getElementById("txtCourse".concat(i)).value;
+		}	
+	function delcon(i)
+	{
+		var con=confirm("Are you sure to delete the record? This action cannot be rolled back.Rownumber-".concat(i));
+		if(con==true)
+			{
+				alert("Record deleted");
+			}else
+				alert("Record not deleted")
+	}
+</script>
+<body style="text-align: center">
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="left" bgcolor="#06993C" scope="col"><img src="./images/course1.jpg" width="39" height="37" alt=""/><span style="font-size: 24px; color: #F0F0F0;">Course</span></th>
+    </tr>
+    <tr>
+      <td width="0" bgcolor="#06993C">&nbsp;</td>
+      <td width="98%"><table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <th colspan="6" height="25" scope="col"><table width="100%" border="0" cellpadding="0">
+              <tbody>
+                <tr>
+<th width="45%" height="19" align="right" valign="middle" bgcolor="#A1A6A3" scope="col"><label for="textfield">Course:&nbsp;</label>
+
+                    <input type="text" name="textfield" id="textfield">
+                    <input type="button" name="button" id="button" value="Quick Add"></th>
+</tr>
+              </tbody>
+            </table></th>
+            </tr>
+          
+          <tr>
+			  <td width="55%" height="21" align="center" bgcolor="#DEE0DF">&nbsp;<strong>Course</strong>&nbsp;</td>
+			  <td width="45%" height="21" align="center" bgcolor="#DEE0DF" >&nbsp;<strong>Management</strong>&nbsp;</td>
+          </tr>
+          <tr>
+                  <td align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblCourse1">INFO 5707 Data Modeling for Information Professionals</label>
+                    <input size="50" type="text" name="textfield" id="txtCourse1" style="display: none" value="INFO 5707 Data Modeling for Information Professionals"></td>
+                  <td height="21" align="center"><input type="button" name="button2" id="btnEdit1" value="Edit" onClick="edit(1);">
+					<input type="button" name="button4" id="btnUpdate1" value="Update" style="display: none" onClick="update(1);"> 
+                    <input type="button" name="button3" id="btnDelete1" value="Delete" onClick="delcon(1);"></td>
+          </tr>
+          <tr>
+                  <td align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblCourse2">INFO 5717 Dynamic WWW Control Structures</label>
+                    <input size="50" type="text" name="textfield" id="txtCourse2" style="display: none" value="INFO 5717 Dynamic WWW Control Structures"></td>
+                  <td height="21" align="center"><input type="button" name="button2" id="btnEdit2" value="Edit" onClick="edit(2);">
+					<input type="button" name="button4" id="btnUpdate2" value="Update" style="display: none" onClick="update(2);"> 
+                    <input type="button" name="button3" id="btnDelete2" value="Delete" onClick="delcon(2);"></td>
+          </tr>
+        </tbody>
+      </table></td>
+      <td width="0" bgcolor="#06993C">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3"  bgcolor="#06993C">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

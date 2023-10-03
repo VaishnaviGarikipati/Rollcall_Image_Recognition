@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CourseSelectionPage</title>
+</head>
+<script language="javascript">
+	function edit(i)
+		{
+			document.getElementById("lblTerm".concat(i)).style.display='none';
+			document.getElementById("txtTerm".concat(i)).style.display='';
+			document.getElementById("lblCourse".concat(i)).style.display='none';
+			document.getElementById("txtCourse".concat(i)).style.display='';
+			document.getElementById("lblStartDate".concat(i)).style.display='none';
+			document.getElementById("txtStartDate".concat(i)).style.display='';
+			document.getElementById("lblEndDate".concat(i)).style.display='none';
+			document.getElementById("txtEndDate".concat(i)).style.display='';
+			document.getElementById("btnUpdate".concat(i)).style.display='';
+			document.getElementById("btnEdit".concat(i)).style.display='none';
+			document.getElementById("btnDelete".concat(i)).style.display='none';
+		}
+	function update(i)
+		{
+			document.getElementById("lblTerm".concat(i)).style.display='';
+			document.getElementById("txtTerm".concat(i)).style.display='none';
+			document.getElementById("lblCourse".concat(i)).style.display='';
+			document.getElementById("txtCourse".concat(i)).style.display='none';
+			document.getElementById("lblStartDate".concat(i)).style.display='';
+			document.getElementById("txtStartDate".concat(i)).style.display='none';
+			document.getElementById("lblEndDate".concat(i)).style.display='';
+			document.getElementById("txtEndDate".concat(i)).style.display='none';
+			document.getElementById("btnUpdate".concat(i)).style.display='none';
+			document.getElementById("btnEdit".concat(i)).style.display='';
+			document.getElementById("btnDelete".concat(i)).style.display='';
+			document.getElementById("lblTerm".concat(i)).innerHTML=document.getElementById("txtTerm".concat(i)).value;
+			document.getElementById("lblCourse".concat(i)).innerHTML=document.getElementById("txtCourse".concat(i)).value;
+			document.getElementById("lblStartDate".concat(i)).innerHTML=document.getElementById("txtStartDate".concat(i)).value;
+			document.getElementById("lblEndDate".concat(i)).innerHTML=document.getElementById("txtEndDate".concat(i)).value;
+		}
+    function update1(scid) {
+	    location.href="/sc/selectcourse/update"+scid+""
+    }
+
+    function del(scid)
+	{
+		if(confirm("Delete Confirm?"))
+		    location.href="/sc/selectcourse/del/"+scid+""
+	}
+
+
+
+</script>
+<body style="text-align: center">
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="left" bgcolor="#06993C" scope="col"><img src="/static/images/Course.PNG" width="41" height="35" alt=""/><span style="font-size: 24px; color: #FFFFFF;">Course Selection</span></th>
+    </tr>
+    <tr>
+    <form action="selectcourse/create" method="POST">
+      <td width="0" bgcolor="#06993C">&nbsp;</td>
+      <td width="98%" align="left" valign="middle" bgcolor="#A1A6A3"><table width="100%" border="1" cellpadding="0" cellspacing="0">
+      </table>
+      <label for="Term" >Term:</label>
+    <select name="selectTerm" class="inputbox1">
+        <option value="0">Pls select a term</option>
+        {%  for term in termlist %}
+        <option value="{{ term.termid }}">{{ term.termname }}</option>
+        {% endfor %}
+    </select>
+      <label for="Term" >Course:</label>
+         <select name="selectCourse" class="inputbox1" id="course">
+        <option value="0">Pls select a course</option>
+             {%  for course in courselist %}
+        <option value="{{ course.courseid }}">{{ course.coursename}}</option>
+        {% endfor %}
+    </select>
+        <table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tbody>
+
+            {% csrf_token %}
+        <input type="submit" name="button" class="btn" id="button" value="Select">
+ </form>
+          <tr>
+            <td width="40%" align="center" bgcolor="#DEE0DF"><table width="100%" border="1" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td width="15%" height="21" align="center" bgcolor="#DEE0DF"><strong>&nbsp;Term</strong></td>
+                  <td width="35%" align="center" bgcolor="#DEE0DF"><strong>&nbsp;Course&nbsp;&nbsp;</strong></td>
+                  <td width="10%" align="center" bgcolor="#DEE0DF"><strong>&nbsp;Course&nbsp;Start Date</strong></td>
+                  <td width="10%" height="21" align="center" bgcolor="#DEE0DF"><strong>&nbsp;Course End Date&nbsp;&nbsp;</strong></td>
+                  <td width="15%" height="21" align="center" bgcolor="#DEE0DF" ><strong>&nbsp;Management</strong>&nbsp;</td>
+                </tr>
+                {% for selectcourse in selectcourselist %}
+                <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+                <form action="selectcourse/update/{{ selectcourse.scid }}" method="POST">
+                    {%  csrf_token %}
+                  <td onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'" align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblTerm{{ selectcourse.scid }}">{{ selectcourse.term.termname }}</label>
+	             <input type="text" name="txtTerm{{ selectcourse.scid }}" id="txtTerm{{ selectcourse.scid }}" style="display: none" value="{{ selectcourse.term.termname }}"></td>
+                    <td onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'"align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblCourse{{ selectcourse.scid}}">{{ selectcourse.course.coursename}}</label>
+                        <input type="text" name="txtCourse{{ selectcourse.scid}}" id="txtCourse{{ selectcourse.scid}}" style="display: none" value="{{ selectcourse.course.coursename }}"></td>
+                  <td onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'"align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblStartDate{{ selectcourse.scid }}">{{ selectcourse.startdate }}</label>
+                    <input type="date" name="txtStartDate{{ selectcourse.scid }}" id="txtStartDate{{ selectcourse.scid }}" style="display: none" value="{{ selectcourse.startdate |date:"Y-m-d"}}"></td>
+                  <td onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'"align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblEndDate{{ selectcourse.scid }}">{{ selectcourse.enddate }}</label>
+                      <input type="date" name="txtEndDate{{ selectcourse.scid }}" id="txtEndDate{{ selectcourse.scid }}" style="display: none" value="{{ selectcourse.enddate |date:"Y-m-d"}}"></td>
+                  <td onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'" height="21" align="center" valign="middle" bgcolor="#FFFFFF">
+					<input type="button" name="button2" id="btnEdit{{ selectcourse.scid }}" value="Edit" onClick="edit({{ selectcourse.scid }});">
+					<input type="submit" name="button4" id="btnUpdate{{ selectcourse.scid }}" value="Update" style="display: none">
+                    <input type="button" name="button3" id="btnDelete{{selectcourse.scid}}" value="Delete" OnClick="del({{selectcourse.scid}});">
+				  </td>
+                </form>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table></td>
+          </tr>
+        </tbody>
+      </table>
+      <td width="0" bgcolor="#06993C">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3"  bgcolor="#06993C">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<iframe frameborder="0" height="1000" width="100%" name="myiframe"></iframe>
+</body>
+</html>

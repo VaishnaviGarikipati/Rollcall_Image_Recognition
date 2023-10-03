@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TermPage</title>
+</head>
+<script language="javascript">
+	function edit(i)
+		{
+			document.getElementById("lblTerm".concat(i)).style.display='none';
+			document.getElementById("txtTerm".concat(i)).style.display='';
+			document.getElementById("btnUpdate".concat(i)).style.display='';
+			document.getElementById("btnEdit".concat(i)).style.display='none';
+			document.getElementById("btnDelete".concat(i)).style.display='none';
+		}
+	function update(i)
+		{
+			document.getElementById("lblTerm".concat(i)).style.display='';
+			document.getElementById("txtTerm".concat(i)).style.display='none';
+			document.getElementById("btnUpdate".concat(i)).style.display='none';
+			document.getElementById("btnEdit".concat(i)).style.display='';
+			document.getElementById("btnDelete".concat(i)).style.display='';
+			document.getElementById("lblTerm".concat(i)).innerHTML=document.getElementById("txtTerm".concat(i)).value;
+		}	
+	function delcon(i)
+	{
+		var con=confirm("Are you sure to delete the record? This action cannot be rolled back.Rownumber-".concat(i));
+		if(con==true)
+			{
+				alert("Record deleted");
+			}else
+				alert("Record not deleted")
+	}
+</script>
+<body style="text-align: center">
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="left" valign="top" bgcolor="#06993C" scope="col"><img src="../../../PycharmProjects/rollcall/Static/images/term1.png" width="44" height="42" alt=""/>&nbsp;<span style="font-size: 24px; color: #FCFCFC;">Term </span></th>
+    </tr>
+    <tr>
+      <td width="0" bgcolor="#06993C">&nbsp;</td>
+      <td width="98%"><table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <th colspan="6" height="25" scope="col"><table width="100%" border="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <th width="45%" height="19" align="right" valign="middle" bgcolor="#A1A6A3" scope="col"><label for="textfield">Term:&nbsp;</label>
+                    <input type="text" name="textfield" id="textfield">
+                    <input type="button" name="button" id="button" value="Add"></th>
+</tr>
+              </tbody>
+            </table></th>
+            </tr>
+          
+          <tr>
+            <td width="50%" height="21" align="center" bgcolor="#DEE0DF">&nbsp;<strong>Term &nbsp;</strong></td>
+            <td width="50%" height="21" align="center" bgcolor="#DEE0DF" >&nbsp;<strong>Management</strong>&nbsp;</td>
+          </tr>
+          <tr>
+ 				<td align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblTerm1">Spring 2020</label>
+                    <input size="30" type="text" name="textfield" id="txtTerm1" style="display: none" value="Spring 2020"></td>
+            	<td height="21" align="center">
+					<input type="button" name="button2" id="btnEdit1" value="Edit" onClick="edit(1);">
+				 	<input type="button" name="button4" id="btnUpdate1" value="Update" style="display: none" onClick="update(1);"> 
+                	<input type="button" name="button3" id="btnDelete1" value="Delete" onClick="delcon(1);"></td>
+          </tr>
+          <tr>
+ 				<td align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblTerm2">Summer 2020</label>
+                    <input size="30" type="text" name="textfield" id="txtTerm2" style="display: none" value="Summer 2020"></td>
+            	<td height="21" align="center">
+					<input type="button" name="button2" id="btnEdit2" value="Edit" onClick="edit(2);">
+				 	<input type="button" name="button4" id="btnUpdate2" value="Update" style="display: none" onClick="update(2);"> 
+                	<input type="button" name="button3" id="btnDelete2" value="Delete" onClick="delcon(2);"></td>
+			</tr>
+  
+        
+        </tbody>
+      </table></td>
+      <td width="0" bgcolor="#06993C">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3"  bgcolor="#06993C">&nbsp;</td>
+    </tr>
+	
+  </tbody>
+</table>
+</body>
+</html>

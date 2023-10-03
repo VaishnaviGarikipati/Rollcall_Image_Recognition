@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HistoryPage</title>
+</head>
+	<script language="javascript">
+function edit(i)
+		{
+			document.getElementById("lblAttended".concat(i)).style.display='none';
+			document.getElementById("txtAttended".concat(i)).style.display='';
+			document.getElementById("btnUpdate".concat(i)).style.display='';
+			document.getElementById("btnEdit".concat(i)).style.display='none';
+			document.getElementById("btnDelete".concat(i)).style.display='none';
+		}
+	function update(i)
+		{
+			document.getElementById("lblAttended".concat(i)).style.display='';
+			document.getElementById("txtAttended".concat(i)).style.display='none';
+			document.getElementById("btnUpdate".concat(i)).style.display='none';
+			document.getElementById("btnEdit".concat(i)).style.display='';
+			document.getElementById("btnDelete".concat(i)).style.display='';
+			document.getElementById("lblAttended".concat(i)).innerHTML=document.getElementById("txtAttended".concat(i)).value;
+		}	
+	function delcon(i)
+	{
+		var con=confirm("Are you sure to delete the record? This action cannot be rolled back.Rownumber-".concat(i));
+		if(con==true)
+			{
+				alert("The record is deleted");
+			}else
+				alert("The record is not deleted")
+	}
+		</script>
+<body>
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="left" valign="middle" bgcolor="#228744" scope="col" border="0" cellpadding="0" cellspacing="0"><img src="images/history.jpg" width="58" height="61" alt=""/><span style="font-size: 36px; color: #FAF9F9">Attendance Details</span></th>
+    </tr>
+    <tr>
+      <td width="1%" bgcolor="#228744">&nbsp;</td>
+      <td width="98%"><table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td height="21" colspan="6" align="left" valign="middle" bgcolor="#ACB0AE"><label for="date">Date:</label>
+              <input type="date" name="date" id="date"></td>
+            </tr>
+          <tr>
+            <td width="10%" height="21" align="center" bgcolor="#DEE0DF">Student Number</td>
+            <td width="20%" height="21" align="center" bgcolor="#DEE0DF">Student Name</td>
+            <td width="25%" height="21" align="center" bgcolor="#DEE0DF">Course</td>
+            <td width="10%" align="center" bgcolor="#DEE0DF">Date</td>
+            <td width="10%" height="21" align="center" bgcolor="#DEE0DF">Attended</td>
+            <td width="25%" align="center" bgcolor="#DEE0DF">Management</td>
+            </tr>
+          <tr
+			  onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'" >
+                  <td align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblStudentNumber1">2020A001</label></td>
+                  <td align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblStudentName1">William</label></td>
+                  <td align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblCourse1">INFO 5707 Data Modeling for Information Professionals</label></td>
+                  <td height="21" align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblDate1">01/01/2020</label></td>
+			           <td height="21" align="center" bgcolor="#FFFFFF"><label for="textfield" id="lblAttended1">Yes</label>
+                    <input type="text" name="textfield" id="txtAttended1" style="display: none" value="Yes"></td>
+			   <td height="21" align="center" valign="middle" bgcolor="#FFFFFF">
+					<input type="button" name="button2" id="btnEdit1" value="Edit" onClick="edit(1);">
+					<input type="button" name="button4" id="btnUpdate1" value="Update" style="display: none" onClick="update(1);"> 
+                    <input type="button" name="button3" id="btnDelete1" value="Delete" onClick="delcon(1);">
+					</td></tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr onMouseOver="this.style.background='#BBF8B3'" onMouseOut="this.style.background='#FFFFFF'">
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table></td>
+      <td width="1%"bgcolor="#228744">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#228744">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

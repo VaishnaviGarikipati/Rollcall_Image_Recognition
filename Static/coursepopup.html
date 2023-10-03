@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CourseSelectionPage</title>
+</head>
+<script language="javascript">
+	function edit(i)
+		{
+			document.getElementById("lblTerm".concat(i)).style.display='none';
+			document.getElementById("TermSel".concat(i)).style.display='';
+			document.getElementById("lblCourse".concat(i)).style.display='none';
+			document.getElementById("CourseSel".concat(i)).style.display='';
+		}
+	function update(i)
+		{
+			document.getElementById("lblTerm".concat(i)).style.display='';
+			document.getElementById("TermSel".concat(i)).style.display='none';
+			document.getElementById("lblCourse".concat(i)).style.display='';
+			document.getElementById("CourseSel".concat(i)).style.display='none';
+			document.getElementById("lblTerm".concat(i)).innerHTML=document.getElementById("TermSel1".concat(i)).value;
+			document.getElementById("lblCourse".concat(i)).innerHTML=document.getElementById("CourseSel".concat(i)).value;
+		}	
+	}
+	var termObject = {
+			"Spring 2020":["INFO 5707 Data Modeling for Information Professionals","INFO 5810 Data Analysis and Knowledge Discovery"],
+			"Summer 2020":["INFO 5717 Dynamic WWW Control Structures","INFO 5305 System Analysis and Design"]
+		};
+	window.onload = function ()
+	{
+		var termSel = document.getElementById("termSel");
+		var	courseSel = document.getElementById("courseSel");
+		for (var term in termObject) {
+			termSel.options[termSel.options.length] = new Option(term, term);
+		}
+		termSel.onchange = function () {
+			courseSel.length = 1; // remove all options bar first
+			if (this.selectedIndex < 1) return; // done  
+			var courses = termObject[termSel.value];
+			for (var i = 0; i < courses.length; i++) {
+            	courseSel.options[courseSel.options.length] = new Option(courses[i], courses[i]);
+        	}	
+    	}
+	}
+</script>
+<body style="text-align: center">
+<table width="42%" border="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="left" bgcolor="#06993C" scope="col"><img src="./images/Course.PNG" width="41" height="35" alt=""/><span style="font-size: 24px; color: #FFFFFF;">Course Selection</span></th>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" bgcolor="#A1A6A3"><table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>            </tr>
+        </tbody>
+      </table>
+       <label for="Term" >Term:</label>
+		      <select name="optone" id="termSel" size="1">
+        <option value="" selected="selected">Select term</option>
+    </select><br><br>
+		  <label for="course">Course:</label>
+    <select name="opttwo" id="courseSel" size="1">
+        <option value="" selected="selected">Please select course </option>
+    </select><br><br>
+        <input type="button" name="button" id="button" value="Ok">
+        <table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tbody>          
+              </tbody>
+            </table></td>
+          </tr>
+        </tbody>
+      </table></td>
+<td width="0" bgcolor="#06993C">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3"  bgcolor="#06993C">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
